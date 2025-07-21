@@ -19,7 +19,7 @@ interface Props {
 }
 
 const NavbarSidebar = ({ items, open, onOpenChange }: Props) => {
-  console.log(items);
+  // console.log(items);
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent side="left" className="p-0 transition-none">
