@@ -10,6 +10,7 @@ import { CustomCategory } from "./types";
 
 interface Props {
   children: React.ReactNode;
+  data: CustomCategory[];
 }
 
 const Layout = async ({ children }: Props) => {
@@ -22,9 +23,8 @@ const Layout = async ({ children }: Props) => {
     depth: 1, // populate subcategories
     pagination: false,
     where: { parent: { exists: false } },
+    sort: "name",
   });
-
-  // console.log(data);
 
   const formattedData: CustomCategory[] = data.docs.map((doc) => ({
     ...doc,
