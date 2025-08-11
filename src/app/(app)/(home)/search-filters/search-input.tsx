@@ -4,23 +4,22 @@ import { ListFilterIcon, SearchIcon } from "lucide-react";
 import React from "react";
 import { useState } from "react";
 
-import { CustomCategory } from "../types";
 import CategoriesSidebar from "./categories-sidebar";
 import { Button } from "@/components/ui/button";
 
 interface Props {
   disabled?: boolean;
-  data: CustomCategory[];
+  // data: CustomCategory[];
 }
 
-const SearchInput = ({ disabled, data }: Props) => {
+const SearchInput = ({ disabled }: Props) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   return (
     <div className="flex items-center gap-2 w-full">
       <div className="relative w-full">
         <CategoriesSidebar
           open={isSidebarOpen}
-          data={data}
+          // data={data}
           onOpenChange={setSidebarOpen}
         />
         <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-neutral-500" />
