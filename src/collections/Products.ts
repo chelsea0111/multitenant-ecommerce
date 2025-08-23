@@ -26,6 +26,12 @@ export const Products: CollectionConfig = {
       relationTo: "categories",
       hasMany: false,
     },
+    {
+      name: "tags",
+      type: "relationship",
+      relationTo: "tags",
+      hasMany: true,
+    },
     { name: "image", type: "upload", relationTo: "media" },
     {
       name: "refundPolicy",
@@ -34,5 +40,5 @@ export const Products: CollectionConfig = {
       defaultValue: "30-day",
     },
   ],
-  upload: true,
+  // upload: true,
 };
