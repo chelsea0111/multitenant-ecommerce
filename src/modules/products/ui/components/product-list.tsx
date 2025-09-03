@@ -3,7 +3,7 @@
 import React from "react";
 import { useTRPC } from "@/trpc/client";
 import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
-import { InboxIcon, Loader } from "lucide-react";
+import { InboxIcon } from "lucide-react";
 import { useProductFilters } from "../../hooks/use-product-filters";
 import ProductCard, { ProductCardSkeleton } from "./product-card";
 import { DEFAULT_LIMIT } from "@/constants";

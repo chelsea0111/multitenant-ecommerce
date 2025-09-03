@@ -16,8 +16,13 @@ interface Props {
 
 const SearchInput = ({ disabled }: Props) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [showLibraryButton, setShowLibraryButton] = useState(false);
   const trpc = useTRPC();
   const session = useQuery(trpc.auth.session.queryOptions());
+  
+  React.useEffect(() => {
+    setShowLibraryButton(!!session.data?.user);
+  }, [session.data?.user]);
   return (
     <div className="flex items-center gap-2 w-full">
       <div className="relative w-full">
@@ -44,7 +49,7 @@ const SearchInput = ({ disabled }: Props) => {
         <ListFilterIcon />
       </Button>
 
-      {session.data?.user && (
+      {showLibraryButton && (
         <Button variant="elevated" asChild>
           <Link href="/library">
             <BookmarkCheckIcon />
