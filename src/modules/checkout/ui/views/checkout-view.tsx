@@ -47,9 +47,9 @@ export const ChekcoutView = ({ tenantSlug }: CheckoutViewProps) => {
 
   useEffect(() => {
     if (states.success) {
-      setStates({ success: false, cancel: false });
+      // setStates({ success: false, cancel: false });
       clearCart();
-      router.push("/products/");
+      // router.push("/products/");
     }
   }, [states.success, clearCart, router, setStates]);
 
