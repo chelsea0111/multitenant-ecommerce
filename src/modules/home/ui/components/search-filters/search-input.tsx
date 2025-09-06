@@ -19,7 +19,7 @@ const SearchInput = ({ disabled }: Props) => {
   const [showLibraryButton, setShowLibraryButton] = useState(false);
   const trpc = useTRPC();
   const session = useQuery(trpc.auth.session.queryOptions());
-  
+
   React.useEffect(() => {
     setShowLibraryButton(!!session.data?.user);
   }, [session.data?.user]);
@@ -51,9 +51,9 @@ const SearchInput = ({ disabled }: Props) => {
 
       {showLibraryButton && (
         <Button variant="elevated" asChild>
-          <Link href="/library">
+          <Link prefetch href="/library">
             <BookmarkCheckIcon />
-            Library
+            My Courses
           </Link>
         </Button>
       )}
