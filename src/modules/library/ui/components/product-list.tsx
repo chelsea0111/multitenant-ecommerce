@@ -49,8 +49,8 @@ const ProductList = () => {
               imageUrl={prod.image?.url}
               tenantSlug={prod.tenant?.slug}
               tenantImageUrl={prod.tenant?.image?.url}
-              reviewRating={3}
-              reviewCount={5}
+              reviewRating={prod.reviewRating}
+              reviewCount={prod.reviewCount}
             />
           ))}
       </div>
